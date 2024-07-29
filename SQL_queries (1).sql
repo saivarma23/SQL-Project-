@@ -12,14 +12,14 @@ CREATE TABLE IF NOT EXISTS sales(
     product_line VARCHAR(100) NOT NULL,
     unit_price DECIMAL(10,2) NOT NULL,
     quantity INT NOT NULL,
-    tax_pct DECIMAL(6,4) NOT NULL,
+    tax_pct DECIMAL(6,2) NOT NULL,
     total DECIMAL(12, 4) NOT NULL,
     date DATE NOT NULL,
     time TIME NOT NULL,
     payment VARCHAR(15) NOT NULL,
     cogs DECIMAL(10,2) NOT NULL,
-    gross_margin_pct DECIMAL(11,9),
-    gross_income DECIMAL(12, 4),
+    gross_margin_pct DECIMAL(11,2),
+    gross_income DECIMAL(12,4),
     rating DECIMAL(2, 1)
 );
 
