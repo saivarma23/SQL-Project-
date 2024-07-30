@@ -1,5 +1,5 @@
 -- Create database
-CREATE DATABASE IF NOT EXISTS walmartSales;
+CREATE DATABASE IF NOT EXISTS project ;
 
 
 -- Create table
@@ -27,7 +27,6 @@ CREATE TABLE IF NOT EXISTS sales(
 SELECT
 	*
 FROM sales;
-
 
 -- Add the time_of_day column
 SELECT
@@ -234,9 +233,10 @@ ORDER BY count DESC;
 -- Which customer type buys the most?
 SELECT
 	customer_type,
-    COUNT(*)
+    COUNT(quantity) as total_qty
 FROM sales
-GROUP BY customer_type;
+GROUP BY customer_type
+order by total_qty desc;
 
 
 -- What is the gender of most of the customers?
@@ -254,10 +254,6 @@ SELECT
 from sales
 GROUP BY gender, branch
 ORDER BY branch;
-
-
--- 
-
 
 -- --------------------------------------------------------------------
 -- --------------------------------------------------------------------
