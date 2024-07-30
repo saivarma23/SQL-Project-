@@ -173,7 +173,7 @@ FROM sales;
 SELECT
 	product_line,
 	CASE
-		WHEN AVG(quantity) > 6 THEN "Good"
+		WHEN AVG(quantity) > select avg(quantity from sales) THEN "Good"
         ELSE "Bad"
     END AS remark
 FROM sales
