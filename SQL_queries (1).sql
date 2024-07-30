@@ -271,7 +271,7 @@ SELECT
 	time_of_day,
 	COUNT(*) AS total_sales
 FROM sales
-WHERE day_name = "Sunday"
+WHERE day_name not in ("Sunday","Saturday")
 GROUP BY time_of_day 
 ORDER BY total_sales DESC;
 -- Evenings experience most sales, the stores are 
