@@ -249,14 +249,12 @@ ORDER BY gender_cnt DESC;
 
 -- What is the gender distribution per branch?
 SELECT
-	gender,
-	COUNT(*) as gender_cnt
-FROM sales
-WHERE branch = "C"
-GROUP BY gender
-ORDER BY gender_cnt DESC;
--- Gender per branch is more or less the same hence, I don't think has
--- an effect of the sales per branch and other factors.
+	branch,gender,
+	COUNT(gender) as gender_cnt
+from sales
+GROUP BY gender, branch
+ORDER BY branch;
+
 
 -- 
 
