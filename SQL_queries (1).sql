@@ -190,13 +190,12 @@ HAVING SUM(quantity) > (SELECT AVG(quantity) FROM sales);
 
 
 -- What is the most common product line by gender
-SELECT
-	gender,
-    product_line,
-    COUNT(gender) AS total_cnt
+
+SELECT gender, product_line, sum(quantity) as total_qty
 FROM sales
 GROUP BY gender, product_line
-ORDER BY total_cnt DESC;
+ORDER BY total_qty desc;
+
 
 -- What is the average rating of each product line
 SELECT
